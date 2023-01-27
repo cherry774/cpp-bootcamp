@@ -1,0 +1,48 @@
+#include <iostream>
+
+bool is_prime(int A) {
+    if (A <= 1) return false;
+    for (int i = 2; i <= A/i; i++) {
+        if (A % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    int A;
+    std::cout << \"Enter an integer: \" ;
+    std::cin >> A; 
+    if (is_prime(A)) {
+        std::cout << A << " is a prime number." << std::endl;
+    } else {
+        std::cout << A << " is not a prime number." << std::endl;
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+#include <iostream>
+
+int reverse_digits(int N) {
+    int reversed = 0;
+    while (N > 0) {
+        int digit = N % 10;
+        reversed = reversed * 10 + digit;
+        N /= 10;
+    }
+    return reversed;
+}
+
+int main() {
+    int N;
+    std::couT<< " ENTER YOUR NUMBER : " <<endl;
+    std::cin >> N;
+    int reversed = reverse_digits(N);
+    std::cout << "The reverse of " << N << " is " << reversed << std::endl;
+    return 0;
+}
